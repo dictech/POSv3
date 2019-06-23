@@ -1,0 +1,197 @@
+
+
+label{
+	color: #008080;}
+	
+
+
+.form{
+	
+	width: 900px;
+	height: 900px;
+	margin: 5px 5px 50px 10px;
+	border: 2px solid #fff; 
+	padding: 15px 5px 5px 5px;
+	}
+	
+.leb-design{
+	
+	color: red;
+	font-size: 90%;
+	margin: 0px 0px 0px 5px;}
+	
+#firstNameIcon{
+	color: #008080;
+	position: absolute;
+	top: 132px;
+	left: 152px;
+	z-index: 1;}
+	
+#lastNameIcon{
+	color: #008080;
+	position: absolute;
+	top: 132px;
+	left: 503px;
+	z-index: 1;}
+	
+#middleNameIcon{
+	color: #008080;
+	position: absolute;
+	top: 219px;
+	left: 152px;
+	z-index: 1;}
+	
+#genderIcon{
+	color: #008080;
+	position: absolute;
+	top: 305px;
+	left: 678px;
+	z-index: 1;}
+	
+#emailIcon{
+	color: #008080;
+	position: absolute;
+	top: 549px;
+	left: 152px;
+	z-index: 1;}
+	
+#addressIcon{
+	color: #008080;
+	position: absolute;
+	top: 392px;
+	left: 152px;
+	z-index: 1;}
+	
+#positionIcon{
+	color: #008080;
+	position: absolute;
+	top: 635px;
+	left: 152px;
+	z-index: 1;}
+		
+#phoneIcon{
+	color: #008080;
+	position: absolute;
+	top: 219px;
+	left: 503px;
+	z-index: 1;}
+	
+#userNameIcon{
+	color: #008080;
+	position: absolute;
+	top: 721px;
+	left: 152px;
+	z-index: 1;}
+	
+#passwordIcon{
+	color: #008080;
+	position: absolute;
+	top: 721px;
+	left: 502px;
+	z-index: 1;}
+	
+	
+	
+	/* login */
+	
+	
+.titleLogo{
+	
+	width: 310px;
+	height: 190px;
+	padding: 0px;
+	line-height: 30px;
+	margin: 20px 0px 0px 495px;
+	padding: 70px 0px 0px 0px;
+	opacity: 0.6;}
+	
+.formContainer{
+	
+	width: 310px;
+	height: 310px;
+	padding: 0px;
+	line-height: 30px;
+	margin: 12px 0px 0px 495px;
+	padding: 0px;}
+	
+.form-inputs-login{
+	
+	width: 305px;
+	height: 52px;
+	border: 1px solid #008080;
+	border-radius: 30px;
+	background-color: none;
+	color: #008080;
+	border: 1px solid #008080;
+	margin: 15px 0px 0px 0px;
+	padding: 0px 0px 0px 41px;
+	font-family: georgia;
+	opacity: 0.9;
+	font-size: 95%;}
+	
+.submit-login{
+	
+	width: 305px;
+	height: 50px;
+	border: 1px solid #008080;
+	border-radius: 30px;
+	background-color: #008080;
+	color: #fff;
+	margin: 15px 0px 0px 0px;
+	padding: 0px;
+	font-family: georgia;
+	font-weight: bold;
+	text-align: center;
+	opacity: 0.9;
+	font-size: 91%;}
+	
+
+.submit-login:hover{
+	
+	width: 305px;
+	height: 50px;
+	border: 1px solid #008080;
+	border-radius: 30px;
+	background-color: #fff;
+	color: #008080;
+	margin: 15px 0px 0px 0px;
+	padding: 0px;
+	font-family: georgia;
+	font-weight: bold;
+	text-align: center;
+	opacity: 0.9;
+	font-size: 91%;}	
+	
+#userNameIcon-login{
+	
+	position: absolute;
+	top: 252px;
+	left: 515px;
+	z-index: 1;
+	
+}
+
+#passwordIcon-login{
+	position: absolute;
+	top: 317px;
+	left: 515px;
+	z-index: 1;
+}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
