@@ -4,4 +4,24 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>CreateAttendantCtrl</servlet-name>
+  	<display-name>CreateAttendantCtrl</display-name>
+  	<description>Create's an account for a staff</description>
+  	<servlet-class>com.pos.account.controller.CreateAttendantCtrl</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LoginCtrl</servlet-name>
+  	<display-name>LoginCtrl</display-name>
+  	<description>logs in an employee</description>
+  	<servlet-class>com.pos.account.controller.LoginCtrl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>CreateAttendantCtrl</servlet-name>
+  	<url-pattern>/RegisterStaff</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LoginCtrl</servlet-name>
+  	<url-pattern>/EmployeeLogin</url-pattern>
+  </servlet-mapping>
 </web-app>

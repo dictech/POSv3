@@ -239,7 +239,7 @@
             <div role="tabpanel" class="tab-pane fade show" id="CreateAttendant">        
             <div class="form">
       
-             <form action="CreateStaffAccount" method="POST" style="width: 670px; margin:auto;">
+             <form action="RegisterStaff" method="POST" style="width: 670px; margin:auto;">
                 
                 <input type="hidden" name="command" value="C" />
                 <i class="fas fa-user" id="firstNameIcon"></i>

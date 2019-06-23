@@ -1,4 +1,4 @@
-package com.webpos.account.model;
+package com.pos.account.model;
 
 import java.math.BigDecimal;
 import java.sql.Connection;
@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.webpos.database.Database;
+import com.pos.database.Database;
 
 
 public class AttendantDAO {

@@ -1,4 +1,4 @@
-package com.webpos.account.model;
+package com.pos.account.model;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -10,7 +10,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.webpos.database.Database;
+import com.pos.database.Database;
 
 public class AttendanceDAO {
 	

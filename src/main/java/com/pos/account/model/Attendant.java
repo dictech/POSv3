@@ -1,4 +1,4 @@
-package com.webpos.account.model;
+package com.pos.account.model;
 
 import java.math.BigDecimal;
 import java.sql.Date;
