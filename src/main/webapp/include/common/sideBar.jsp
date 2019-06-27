@@ -38,9 +38,8 @@
      aria-expanded="false"
      aria-controls="setupSubSystemList">SYSTEM SETUPS</a>
   	  <div class="list-group list-group-flush collapse" id="setupSubSystemList">
-		  <a href="OrgServlet" class="list-group-item">Shop details</a>
+		  <a href="OrgServlet" class="list-group-item">Organization setup</a>
 		  <a href="Account" class="list-group-item">Account</a>
-		  <a href="createShop.jsp" class="list-group-item">Organization setup</a>
 	  </div>
 
 </div>
