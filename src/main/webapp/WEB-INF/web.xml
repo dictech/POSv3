@@ -1,7 +1,54 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
-
-<web-app>
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>Archetype Created Web Application</display-name>
+  
+  <servlet>
+  	<servlet-name>OrgServlet</servlet-name>
+  	<servlet-class>com.pos.org.controller.OrgServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>CreateAttendantCtrl</servlet-name>
+  	<servlet-class>com.pos.account.controller.CreateAttendantCtrl</servlet-class>
+  </servlet>
+  
+
+  
+
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>AttendantServlet</display-name>
+  	<servlet-name>AttendantServlet</servlet-name>
+  	<servlet-class>com.pos.account.servlet.AttendantServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>LoginServlet</display-name>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<servlet-class>com.pos.account.servlet.LoginServlet</servlet-class>
+  </servlet>
+  
+
+  <servlet-mapping>
+  	<servlet-name>OrgServlet</servlet-name>
+  	<url-pattern>/OrgServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>CreateAttendantCtrl</servlet-name>
+  	<url-pattern>/CreateStaffAccount</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>AttendantServlet</servlet-name>
+  	<url-pattern>/Account</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<url-pattern>/loginAttendant</url-pattern>
+  </servlet-mapping>
+
 </web-app>
