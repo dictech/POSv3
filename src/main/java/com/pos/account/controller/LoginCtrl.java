@@ -13,9 +13,9 @@ import com.pos.account.model.SystemAccountDAO;
 public class LoginCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private boolean isValid = SystemAccountDAO.isValidationCheck(); 
+	
     public LoginCtrl() {
         super();
-       
     }
 
 

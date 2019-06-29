@@ -1,20 +1,17 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
-<web-app>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
   	<servlet-name>CreateAttendantCtrl</servlet-name>
-  	<display-name>CreateAttendantCtrl</display-name>
-  	<description>Create's an account for a staff</description>
   	<servlet-class>com.pos.account.controller.CreateAttendantCtrl</servlet-class>
   </servlet>
   <servlet>
   	<servlet-name>LoginCtrl</servlet-name>
-  	<display-name>LoginCtrl</display-name>
-  	<description>logs in an employee</description>
   	<servlet-class>com.pos.account.controller.LoginCtrl</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AttendantServlet</servlet-name>
+  	<servlet-class>com.pos.account.controller.AttendantServlet</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>CreateAttendantCtrl</servlet-name>
@@ -23,5 +20,9 @@
   <servlet-mapping>
   	<servlet-name>LoginCtrl</servlet-name>
   	<url-pattern>/EmployeeLogin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AttendantServlet</servlet-name>
+  	<url-pattern>/Account</url-pattern>
   </servlet-mapping>
 </web-app>
