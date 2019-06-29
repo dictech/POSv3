@@ -1,28 +1,29 @@
 
+
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>Archetype Created Web Application</display-name>
+  
   <servlet>
-  	<servlet-name>CreateAttendantCtrl</servlet-name>
-  	<servlet-class>com.pos.account.controller.CreateAttendantCtrl</servlet-class>
+  	<servlet-name>OrgServlet</servlet-name>
+  	<servlet-class>com.pos.org.controller.OrgServlet</servlet-class>
   </servlet>
-  <servlet>
-  	<servlet-name>LoginCtrl</servlet-name>
-  	<servlet-class>com.pos.account.controller.LoginCtrl</servlet-class>
-  </servlet>
+  
+
   <servlet>
   	<servlet-name>AttendantServlet</servlet-name>
   	<servlet-class>com.pos.account.controller.AttendantServlet</servlet-class>
   </servlet>
+
+
   <servlet-mapping>
-  	<servlet-name>CreateAttendantCtrl</servlet-name>
-  	<url-pattern>/RegisterStaff</url-pattern>
+  	<servlet-name>OrgServlet</servlet-name>
+  	<url-pattern>/OrgServlet</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>LoginCtrl</servlet-name>
-  	<url-pattern>/EmployeeLogin</url-pattern>
-  </servlet-mapping>
+  
+
   <servlet-mapping>
   	<servlet-name>AttendantServlet</servlet-name>
   	<url-pattern>/Account</url-pattern>
   </servlet-mapping>
+
 </web-app>

@@ -25,7 +25,6 @@ private static final long serialVersionUID = 1L;
   private static List<Attendant> allEmployee = null;
   private static List<Attendance> allAttendance = null;
   
-  private RequestDispatcher dispatch;
 
 
     public AttendantServlet() throws Exception{
