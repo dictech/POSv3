@@ -34,7 +34,7 @@
   <img alt="title-logo" src="images/posv2SingleLogo.png" width="105" height="102">
   </div>
                  
-   <form action="loginAttendant" method="GET" class="formContainer">
+   <form action="EmployeeLogin" method="GET" class="formContainer">
      
    <div>
    <input type="text" name="loginUserName" class="form-inputs-login" placeholder="Username" required />              

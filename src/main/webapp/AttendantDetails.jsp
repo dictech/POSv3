@@ -27,9 +27,9 @@
     <jsp:include page="/include/common/nav.jsp" />
   </div>
 
-  <!-- Page Content -->
-  <div class="container">
-
+    <!-- Page Content -->
+    <div class="container">
+    
     <div class="row">
 
       <div class="col-lg-3">
@@ -63,8 +63,9 @@
                      <div class="modal-body" id="editAttdt">
 
                                            
-                       <form action="#" style="width: 500px; margin: auto;">
-                       
+                       <form action="Account" style="width: 500px; margin: auto;">
+                         <input type="hidden" id="operation"   value="UPDATE" name="operation" />
+                         
                        <div class="row">
                        <div class="col">
                          <div class="form-group">
@@ -149,8 +150,8 @@
                         </div> 
                        </div>
                        
-                       </form>
-                       <div class="modal-footer">
+                  </form>
+                  <div class="modal-footer">
                           <input type="submit" class="btn btn-default" value="Update">
                           <button class="btn btn-primary" data-dismiss="modal">Close</button>
                        </div>
@@ -163,7 +164,6 @@
 
                 
                 <div class="tab-content">
-                    
                   <div role="tabpanel" id="workersList" class="tab-pane fade show active"> 
                   <div class="table-responsive">  
                   <table class="table">
@@ -206,7 +206,6 @@
                     
                     
                <div role="tabpanel" class="tab-pane fade show" id="AttendantList">
-               
                 <table class="table">
                   <thead>
                     <tr>
@@ -239,9 +238,9 @@
             <div role="tabpanel" class="tab-pane fade show" id="CreateAttendant">        
             <div class="form">
       
-             <form action="CreateStaffAccount" method="POST" style="width: 670px; margin:auto;">
+             <form action="Account" method="GET" style="width: 670px; margin:auto;">
+                <input type="hidden" id="operation"   value="CREATE" name="operation" />
                 
-                <input type="hidden" name="command" value="C" />
                 <i class="fas fa-user" id="firstNameIcon"></i>
                 <i class="fas fa-user" id="lastNameIcon"></i>
                 <i class="fas fa-user" id="middleNameIcon"></i>
