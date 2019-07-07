@@ -105,7 +105,7 @@ public class OrganizationDAO {
 	}
 	
 
-	public static boolean deleteOrganization(Organization org) {
+	public static boolean deleteOrganization(BigDecimal orgId) {
 		
 		SessionFactory sessionFactory = new Configuration()
 				.configure()
@@ -116,7 +116,7 @@ public class OrganizationDAO {
 			
 			    Session session = sessionFactory.openSession();
 				session.beginTransaction();
-				session.delete(org);
+				session.createQuery("delete from Organization where org_id =" + orgId).executeUpdate();
 				session.getTransaction().commit();
 				session.close();
 				

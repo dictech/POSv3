@@ -1,7 +1,7 @@
 package com.pos.org.controller;
 
 import java.io.IOException;
-
+import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -57,6 +57,7 @@ public class OrgServlet extends HttpServlet {
 			case READ_ALL:
 				request.setAttribute("orgs", OrganizationCtrl.viewAllOrganization());
 				request.getRequestDispatcher("createShop.jsp").forward(request, response);
+				response.getWriter().write(Arrays.toString(OrganizationCtrl.viewAllOrganization().toArray()));  //OrganizationCtrl.viewAllOrganization().toArray()
 				break;
 		}
 		

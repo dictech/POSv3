@@ -73,7 +73,8 @@
 
        <br>
         <div class="tab-content">
-          <div class="tab-pane fade show active" id="org" role="tabpanel" aria-labelledby="OrgTab">  
+          <div class="tab-pane fade show active" id="org" role="tabpanel" aria-labelledby="OrgTab">
+               <input type="hidden" id="operationz" name="operation" />
                <table class="table" id="orgTable">
                   <thead>
                     <tr>
@@ -88,7 +89,8 @@
                                   class="btn btn-success btn-sm"
                                   data-toggle="modal"
                                   data-target="#addOrgModal"
-								  id="addOrgButton">
+								  id="saveOrgButton"
+								  value = "CREATE">
                                   <span class="glyphicon  glyphicon-star" aria-hidden="true"></span>Add
                           </button>
                         </div>
@@ -110,14 +112,17 @@
                                   class="btn btn-primary btn-sm"
                                   data-toggle="modal"
                                   data-target="#updateOrgModal"
-                                  id="updateOrgButton">
+                                  id="updateOrgButton"
+                                  value = "UPDATE">
                                   <span class="glyphicon glyphicon-search"></span>Update
                           </button>
 
                           <button type="button" 
                                   class="btn btn-danger btn-sm"
                                   data-toggle="modal"
-                                  data-target="#deleteOrgModal">
+                                  data-target="#deleteOrgModal"
+                                  id="deleteOrgButton"
+                                  value = "DELETE">
                                   <span class="glyphicon glyphicon-search"></span> Delete
                           </button>
                         </div>
@@ -174,7 +179,7 @@
 	                    <button type="button" 
 	                    		class="btn btn-primary"  
 	                    		name="button" 
-	                    		id="saveOrgButton">Save update</button>
+	                    		id="saveOrgModalButton">Save update</button>
 	                  </div>
                     </form>
                   </div>
@@ -263,15 +268,18 @@
                     </button>
                   </div>
                   <div class="modal-body">
-                    <form>
+                    <form action="OrgServlet" method="post">
                       <input type="hidden" id="operation" name="operation" value="DELETE">
                       <input type="hidden" id="orgId" name="orgId">
-                      Are you sure you want to delete this record? :(
+                      Are you sure you want to delete this record?   :(
                     </form>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" name="button" value="DELETE">Delete</button>
+                    <button type="button" 
+                    		class="btn btn-primary" 
+                    		id="deleteOrgModalButton"  
+                    		value="DELETE">Delete</button>
                   </div>
                 </div>
               </div>
@@ -283,7 +291,7 @@
            <div class="tab-pane fade" id="branch" role="tabpanel" aria-labelledby="BranchTab">
 
         <div class="tab-content">
-          <div class="tab-pane fade show active" id="org" role="tabpanel" aria-labelledby="OrgTab">
+          <div class="tab-pane fade show active" id="branch" role="tabpanel" aria-labelledby="OrgTab">
             
                <table class="table">
                   <thead>
@@ -495,6 +503,6 @@
       window.history.replaceState( null, null, window.location.href );
     }
 </script>
-<script type="text/javascript" src="js/test.js"></script>
+<script type="module" src="js/test.js"></script>
 </html>
 

@@ -56,8 +56,15 @@ public class OrganizationCtrl {
 	}
 	
 	public static String deleteOrganization(HttpServletRequest request) {
+		BigDecimal orgId = new BigDecimal(request.getParameter("orgId"));
+		isSuccessful = OrganizationDAO.deleteOrganization(orgId);
+		if(isSuccessful) {
+			msg="Shop successfully deleted";
+		}else {
+			msg="Failed to delete shop. Please check log for details.";
+		}
 		
-		return "true";
+		return msg;
 	}
 
 

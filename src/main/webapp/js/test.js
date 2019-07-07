@@ -1,95 +1,134 @@
-function saveOrg(e) {
-	e.preventDefault();
 
-	let xhr = new XMLHttpRequest();
-	xhr.open('POST','http://localhost:8080/webpos/OrgServlet', true);
-	xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+	let saveOrgButton = document.getElementById('saveOrgButton');
+	saveOrgButton.addEventListener('click', setOperationType);
 
-
-
-	xhr.onload = function(test){
-		 document.getElementById('operationStatus').innerHTML = xhr.responseText;
-		 $('#addOrgModal').modal('hide');
-		 $('#statusModal').modal('show');
-		 if(this.status == 200){
-		    document.getElementById("addOrgForm").reset();
-		 }
-}
+	let saveOrgModalButton = document.getElementById('saveOrgModalButton');
+	saveOrgModalButton.addEventListener('click', executeOperation);
 
 
-
-xhr.send('operation='+ document.getElementById('operation').value+'&'+
-		 'orgName='+document.getElementById('orgName').value+'&'+
-		 'orgEmail='+document.getElementById('orgEmail').value+'&'+
-		 'orgPhoneNo='+document.getElementById('orgPhoneNo').value);
-}
+	let upDateOrgButtonModal = document.getElementById('saveUpdateOrgButton');
+	upDateOrgButtonModal.addEventListener('click', executeOperation);
 
 
-let saveOrgForm = document.getElementById('saveOrgButton');
-saveOrgForm.addEventListener('click', saveOrg);
+	let deleteOrgModalButton =  document.getElementById('deleteOrgModalButton');
+	deleteOrgModalButton.addEventListener('click', executeOperation);
+
+
+	let orgTable = document.querySelector('#orgTable');
+	orgTable.addEventListener('click',setOrgModalFields);
 
 
 
-
-
-
-
-
-
-
-let orgList = document.querySelector('#orgTable');
-orgList.addEventListener('click',getOrgTableRow);
-
-function getOrgTableRow(e){
-	console.log('in function getOrgTableRow')
-
-	if(e.target.classList.contains('btn')){
-
-			var row =  e.target.closest('tr')
-
-			// document.querySelectorAll('#updateOrgModal input').item(1).value = row.cells.item(1).innerHTML		
-			// document.querySelectorAll('#updateOrgModal input').item(2).value = row.cells.item(2).innerHTML
-			// document.querySelectorAll('#updateOrgModal input').item(3).value = row.cells.item(4).innerHTML
-			// document.querySelectorAll('#updateOrgModal input').item(4).value = row.cells.item(5).innerHTML
-			//document.querySelectorAll('#updateOrgModal input').item(5).value = row.cells.item(6).innerHTML
-
-			document.querySelector('#updateOrgModal #orgId').value = row.cells.item(1).innerHTML;	
-			document.querySelector('#updateOrgModal #orgName').value = row.cells.item(2).innerHTML;
-			document.querySelector('#updateOrgModal #orgPhoneNo').value = row.cells.item(4).innerHTML;
-            document.querySelector('#updateOrgModal #orgEmail').value = row.cells.item(5).innerHTML;
+	function setOperationType(e){
+		document.getElementById('operationz').value = e.target.value;
 	}
 
-}
 
-let upDateOrgButton = document.getElementById('saveUpdateOrgButton');
-upDateOrgButton.addEventListener('click', updateOrg);
 
-function updateOrg(){
-	console.log('in function updateOrg')
-	event.preventDefault();
-    
-	let xhr =  new XMLHttpRequest();
-	xhr.open('POST', 'OrgServlet', true);
-	xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
 
-	xhr.onload = ()=>{
-		document.querySelector('#operationStatus').innerHTML = xhr.responseText;
-		$('#updateOrgModal').modal('hide');
-		$('#statusModal').modal('show');
-		if(this.status == 200){
-			document.getElementById('updateOrgModal').reset();
+	function getSelectedTableRow(e){
+		console.log('getting selected table row');
+
+		if(e.target.classList.contains('btn')){
+
+			if(e.target.closest('tr') == null){
+				throw new Error('No row was retrived. row is ' + e.target.closest('tr'));
+			}
+			return  e.target.closest('tr');
 		}
-
 	}
 
-	xhr.send(//'operation='+ document.querySelector('#updateOrgModal #operation').value+'&'+
-		     'orgId='+ document.querySelector('#updateOrgModal #orgId').value+'&'+
-			 'orgName='+document.querySelector('#updateOrgModal #orgName').value+'&'+
-			 'orgEmail='+document.querySelector('#updateOrgModal #orgEmail').value+'&'+
-			 'orgPhoneNo='+document.querySelector('#updateOrgModal #orgPhoneNo').value+'&'+
-	         'operation='+ document.querySelector('#updateOrgModal #operation').value);
 
-}
+
+	function setOrgModalFields(e){
+		console.log('setting table row to modal fields');
+	    
+	    setOperationType(e);
+		var row =  getSelectedTableRow(e);
+
+		document.querySelector('#updateOrgModal #orgId').value = row.cells.item(1).innerHTML;	
+		document.querySelector('#updateOrgModal #orgName').value = row.cells.item(2).innerHTML;
+		document.querySelector('#updateOrgModal #orgPhoneNo').value = row.cells.item(4).innerHTML;
+	    document.querySelector('#updateOrgModal #orgEmail').value = row.cells.item(5).innerHTML;
+
+	    document.querySelector('#deleteOrgModal #orgId').value = row.cells.item(1).innerHTML;
+	}
+
+
+	function  getXMLHttpRequest(operationModal){
+
+			let xhr = new XMLHttpRequest();
+			xhr.open('POST','http://localhost:8080/webpos/OrgServlet',true);
+			xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+			xhr.onload =function(){
+
+				document.getElementById('operationStatus').innerHTML = xhr.responseText;
+				$(operationModal).modal('hide');
+				$('#statusModal').modal('show');
+				if(this.status == 200){
+				    $('#orgTable').load(' #orgTable');
+				}
+
+			}
+
+			return xhr;
+	}
+
+
+
+
+	function executeOperation(e){
+
+			e.preventDefault();
+		    let operation  = document.getElementById('operationz').value;
+		    let xhr = new XMLHttpRequest();
+
+			switch(operation){
+				case  'CREATE':
+				    xhr = getXMLHttpRequest('#addOrgModal');
+					xhr.send('operation='+ document.getElementById('operation').value+'&'+
+							 'orgName='+document.getElementById('orgName').value+'&'+
+							 'orgEmail='+document.getElementById('orgEmail').value+'&'+
+							 'orgPhoneNo='+document.getElementById('orgPhoneNo').value);
+					break;
+
+
+				case   'UPDATE':
+				    xhr = getXMLHttpRequest('#updateOrgModal');
+					xhr.send(//'operation='+ document.querySelector('#updateOrgModal #operation').value+'&'+
+						     'orgId='+ document.querySelector('#updateOrgModal #orgId').value+'&'+
+							 'orgName='+document.querySelector('#updateOrgModal #orgName').value+'&'+
+							 'orgEmail='+document.querySelector('#updateOrgModal #orgEmail').value+'&'+
+							 'orgPhoneNo='+document.querySelector('#updateOrgModal #orgPhoneNo').value+'&'+
+					         'operation='+ document.querySelector('#updateOrgModal #operation').value);
+					break;
+
+
+				case 	'DELETE':
+				    xhr = getXMLHttpRequest('#deleteOrgModalButton');
+					xhr.send('operation='+document.querySelector('#deleteOrgModal #operation').value+'&'+
+					 		 'orgId='+document.querySelector('#deleteOrgModal #orgId').value);
+
+					break;
+
+
+				default:
+					console.log('NO OPERATION TO EXECUTE');
+			}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
