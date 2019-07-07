@@ -57,12 +57,12 @@
 
         <li class="nav-item">
           <a class="nav-link"
-             id="branchTab"
-             href="#branch"
+             id="shopTab"
+             href="#shop"
              data-toggle="tab"
              role="tab"
-             aria-control="branch"
-             aria-selected="false">Branch</a>
+             aria-control="shop"
+             aria-selected="false">Shops</a>
         </li>
 
         <li class="nav-item">
@@ -287,26 +287,32 @@
             <!-- deleteOrgModal Modal -->
 
 
-            <!-- Branch Tab pane -->
-           <div class="tab-pane fade" id="branch" role="tabpanel" aria-labelledby="BranchTab">
+
+
+
+
+
+        <!-- Shop Tab pane -->
+        <div class="tab-pane fade" id="shop" role="tabpanel" aria-labelledby="shopTab">
 
         <div class="tab-content">
-          <div class="tab-pane fade show active" id="branch" role="tabpanel" aria-labelledby="OrgTab">
+          <div class="tab-pane fade show active" id="shopTabContent" role="tabpanel" aria-labelledby="shopTab">
             
                <table class="table">
                   <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">Org Name</th>
+                      <th scope="col">Shop Name</th>
                       <th scope="col">Address</th>
                       <th scope="col">Phone No.</th>
-                      <th scope="col">Email.</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Manager</th>
                       <th scope="col">
                         <div class="text-right">
                           <button type="submit" 
                                   class="btn btn-success btn-sm"
                                   data-toggle="modal"
-                                  data-target="#addBranchModal">
+                                  data-target="#addShopModal">
                                   <span class="glyphicon  glyphicon-star" aria-hidden="true"></span>Add
                           </button>
                         </div>
@@ -320,47 +326,22 @@
                       <td>Otto</td>
                       <td>@mdo</td>
                       <td>@mdo</td>
+                      <td>@mdo</td>
                       <td>
                         <div class="text-right">
                           <button type="submit" 
                                   class="btn btn-primary btn-sm"
                                   data-toggle="modal"
-                                  data-target="#updateBranchModal">
+                                  data-target="#updateShopModal">
                                   <span class="glyphicon glyphicon-search"></span>Update
                           </button>
 
                           <button type="submit" 
                                   class="btn btn-danger btn-sm"
                                   data-toggle="modal"
-                                  data-target="#deleteBranchModal">
+                                  data-target="#deleteShopModal">
                                   <span class="glyphicon glyphicon-search"></span> Delete
                           </button>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                      <td>@fat</td>
-                      <td>@mdo</td>
-                       <td>
-                        <div class="text-right">
-                          <button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span>Update</button>
-                          <button type="submit" class="btn btn-danger btn-sm"> <span class="glyphicon glyphicon-search"></span> Delete</button>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Larry</td>
-                      <td>the Bird</td>
-                      <td>@twitter</td>
-                      <td>@mdo</td>
-                      <td>
-                        <div class="text-right">
-                          <button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span>Update</button>
-                          <button type="submit" class="btn btn-danger btn-sm"> <span class="glyphicon glyphicon-search"></span> Delete</button>
                         </div>
                       </td>
                     </tr>
@@ -371,12 +352,12 @@
          </div>
         <!-- Branch Tab pane -->
 
-           <!--addBranchModal Modal -->
-            <div class="modal fade" id="addBranchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+           <!--addShopModal Modal -->
+            <div class="modal fade" id="addShopModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Add new Organization</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Add new shop</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -385,8 +366,8 @@
                    <form>
                      <br>
                     <div class="form-group row">
-                      <label for="colFormLabel" class="col-sm-2 col-form-label">Brn. Name:</label>
-                      <div class="col-sm-10">
+                      <label for="colFormLabel" class="col-sm-2 col-form-label">Name:</label>
+                      <div class="col-sm-8">
                         <input type="email" class="form-control" id="colFormLabel" placeholder="enter branch name">
                       </div>
                     </div>
@@ -394,20 +375,74 @@
                     <div class="form-group row">
                       <label for="colFormLabel" class="col-sm-2 col-form-label">Address:</label>
                       <div class="col-sm-8">
-                        <textarea rows="4" cols="50" class="form-control" id="colFormLabel" placeholder="enter branch address"></textarea>
+                        <textarea rows="3" cols="45" class="form-control" id="colFormLabel" placeholder="enter branch address"></textarea>
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label for="colFormLabel" class="col-sm-2 col-form-label">LGA:</label>
-                      <div class="col-sm-5">
+                      <div class="col-sm-6">
                         <input type="tel" class="form-control" id="colFormLabel" placeholder="enter LGA of branch">
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label for="colFormLabel" class="col-sm-2 col-form-label">State:</label>
-                      <div class="col-sm-5">
+                      <div class="col-sm-6">
+                        <input type="text" class="form-control" id="colFormLabel" placeholder="enter state.">
+                      </div>
+                    </div>
+
+                  </form>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- addShopModal Modal -->
+
+
+             <!--updateShopModal Modal -->
+            <div class="modal fade" id="updateShopModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Update shop</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                   <form>
+                     <br>
+                    <div class="form-group row">
+                      <label for="colFormLabel" class="col-sm-2 col-form-label">Name:</label>
+                      <div class="col-sm-8">
+                        <input type="email" class="form-control" id="colFormLabel" placeholder="enter branch name">
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label for="colFormLabel" class="col-sm-2 col-form-label">Address:</label>
+                      <div class="col-sm-8">
+                        <textarea rows="3" cols="45" class="form-control" id="colFormLabel" placeholder="enter branch address"></textarea>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label for="colFormLabel" class="col-sm-2 col-form-label">LGA:</label>
+                      <div class="col-sm-6">
+                        <input type="tel" class="form-control" id="colFormLabel" placeholder="enter LGA of branch">
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label for="colFormLabel" class="col-sm-2 col-form-label">State:</label>
+                      <div class="col-sm-6">
                         <input type="text" class="form-control" id="colFormLabel" placeholder="enter state.">
                       </div>
                     </div>
@@ -422,61 +457,40 @@
                 </div>
               </div>
             </div>
-            <!-- addBranchModal Modal -->
-
-
-             <!--updateBranchModal Modal -->
-            <div class="modal fade" id="updateBranchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <!-- updateShopModal Modal -->
+            
+            
+            
+            
+             <!--deleteShopModal Modal -->
+            <div class="modal fade" id="deleteShopModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
+                
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Add new Organization</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Delete shop</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
+                  
                   <div class="modal-body">
-                   <form>
-                     <br>
-                    <div class="form-group row">
-                      <label for="colFormLabel" class="col-sm-2 col-form-label">Brn. Name:</label>
-                      <div class="col-sm-10">
-                        <input type="email" class="form-control" id="colFormLabel" placeholder="enter branch name">
-                      </div>
-                    </div>
-
-                    <div class="form-group row">
-                      <label for="colFormLabel" class="col-sm-2 col-form-label">Address:</label>
-                      <div class="col-sm-8">
-                        <textarea rows="4" cols="50" class="form-control" id="colFormLabel" placeholder="enter branch address"></textarea>
-                      </div>
-                    </div>
-
-                    <div class="form-group row">
-                      <label for="colFormLabel" class="col-sm-2 col-form-label">LGA:</label>
-                      <div class="col-sm-5">
-                        <input type="tel" class="form-control" id="colFormLabel" placeholder="enter LGA of branch">
-                      </div>
-                    </div>
-
-                    <div class="form-group row">
-                      <label for="colFormLabel" class="col-sm-2 col-form-label">State:</label>
-                      <div class="col-sm-5">
-                        <input type="text" class="form-control" id="colFormLabel" placeholder="enter state.">
-                      </div>
-                    </div>
-
-                  </form>
-
+	                  <form action="OrgServlet" method="post">
+	                      <input type="hidden" id="operation" name="operation" value="DELETE">
+	                      <input type="hidden" id="shopId" name="shopId">
+	                      Are you sure you want to delete this record?   :(
+	                  </form>
                   </div>
+                  
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Save changes</button>
                   </div>
+                  
                 </div>
               </div>
             </div>
-            <!-- addBranchModal Modal -->
+            <!-- deleteShopModal Modal -->
 
       </div>
       <!-- /.col-lg-9 -->
